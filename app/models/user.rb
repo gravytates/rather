@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :votes
   has_many :comments
-  # has_many :questions, through :votes
+  has_many :questions
 
 
   # Include default devise modules. Others available are:
