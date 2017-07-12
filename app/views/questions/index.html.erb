@@ -1,11 +1,8 @@
 <h1>We got questions, you got answers.</h1>
 <h3>The worst answers.</h3>
 
-<%= link_to "Add Question", new_question_path, remote: true, class: "btn btn-default", id: "newQuestion"%>
+<%= link_to "Add Question", new_question_path, class: "btn btn-default", id: "newQuestion", remote: true %>
 
-<% @questions.each do |question| %>
-  <h2>Would You Rather...?</h2>
-  <% question.options.each do |option| %>
-    <h4><%= option.content %></h4>
-  <% end %>
-<% end %>
+<div id="question_details">
+  <%= render "question_details", collection: @questions %>
+</div>

@@ -3,4 +3,6 @@ class Question < ApplicationRecord
   has_many :comments
   belongs_to :user
 
+
+  scope :recent, -> { order(created_at: :desc)}
 end

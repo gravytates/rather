@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
+    sleep 1
+    @questions = Question.recent
   end
 
   def new
@@ -15,10 +16,15 @@ class QuestionsController < ApplicationController
     option1 = question_params.fetch(:option1)
     option2 = question_params.fetch(:option2)
     question = current_user.questions.create
-    if question.options.create(content: option1) && question.options.create(content: option2)
-      redirect_to questions_path
-    else
-      render :new
+    question.options.create(content: option1)
+    question.options.create(content: option2)
+    @questions = Question.recent
+
+    respond_to do |format|
+      format.html {
+          redirect_to questions_path
+      }
+      format.js
     end
   end
 

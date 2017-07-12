@@ -1,0 +1,6 @@
+<% @questions.each do |question| %>
+    <h2>Would You Rather...?</h2>
+    <% question.options.each do |option| %>
+      <h4><%= option.content %></h4>
+    <% end %>
+<% end %>
