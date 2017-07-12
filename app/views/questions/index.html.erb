@@ -1,7 +1,7 @@
 <h1>We got questions, you got answers.</h1>
 <h3>The worst answers.</h3>
 
-<%= link_to "Add Question", new_question_path, class: "btn btn-default"%>
+<%= link_to "Add Question", new_question_path, remote: true, class: "btn btn-default", id: "newQuestion"%>
 
 <% @questions.each do |question| %>
   <h2>Would You Rather...?</h2>

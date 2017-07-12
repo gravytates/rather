@@ -5,6 +5,10 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+    respond_to do |format|
+      format.html { redirect_to questions_path }
+      format.js
+    end
   end
 
   def create
