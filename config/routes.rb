@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :questions do
-    resources :comments, :answers
+    resources :comments, :options
   end
 
   resource :home, only: [:show]

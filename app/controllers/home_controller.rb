@@ -1,3 +1,3 @@
 class HomeController < ApplicationController
-  skip_before_action only: [:show]
+  skip_before_action :authenticate_user!, only: [:show]
 end

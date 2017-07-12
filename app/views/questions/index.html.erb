@@ -1,2 +1,11 @@
 <h1>We got questions, you got answers.</h1>
 <h3>The worst answers.</h3>
+
+<%= link_to "Add Question", new_question_path, class: "btn btn-default"%>
+
+<% @questions.each do |question| %>
+  <h2>Would You Rather...?</h2>
+  <% question.options.each do |option| %>
+    <h4><%= option.content %></h4>
+  <% end %>
+<% end %>

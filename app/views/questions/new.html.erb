@@ -1,0 +1,12 @@
+<%= render "layouts/errors", :object => @question %>
+
+<h1>New Question</h1>
+
+<%= form_tag questions_path, method: :post do %>
+  <%= label_tag "Option 1" %>
+  <%= text_field_tag :option1, "", class: "form-control" %>
+  <%= label_tag "Option 2" %>
+  <%= text_field_tag :option2, "", class: "form-control" %>
+  <br>
+  <%= submit_tag "Submit", class: "btn btn-default" %>
+<% end %>
