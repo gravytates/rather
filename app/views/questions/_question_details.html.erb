@@ -3,7 +3,12 @@
     <% question.options.each do |option| %>
       <h4>
         <%= link_to option.content, option_votes_path(option), method: :post, class: 'option', remote: true  %>
-         <span id="<%=option.id%>"></span>
+        <span id="<%=option.id%>"></span>
       </h4>
     <% end %>
+    <div class="comments" id="<%= question.id %>">
+      <p>
+
+      </p>
+    </div>
 <% end %>

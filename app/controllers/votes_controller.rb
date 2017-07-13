@@ -1,6 +1,7 @@
 class VotesController < ApplicationController
   def create
     @option = Option.find(params.fetch(:option_id))
+    @question = @option.question
     vote = @option.votes.new(user_id: current_user.id)
     vote.save
     respond_to do |format|

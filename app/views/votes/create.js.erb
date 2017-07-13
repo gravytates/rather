@@ -1,3 +1,5 @@
 var id = `#<%= @option.id %>`
+var question = `#<%= @question.id %>`
 console.log(id);
 $(id).text(`Votes: <%= vote_count(@option)%>`);
+$(question).show();
