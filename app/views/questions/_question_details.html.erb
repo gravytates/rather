@@ -1,6 +1,9 @@
 <% @questions.each do |question| %>
     <h2>Would You Rather...?</h2>
     <% question.options.each do |option| %>
-      <h4><%= option.content %></h4>
+      <h4>
+        <%= link_to option.content, option_votes_path(option), method: :post, class: 'option', remote: true  %>
+         <span id="<%=option.id%>"></span>
+      </h4>
     <% end %>
 <% end %>

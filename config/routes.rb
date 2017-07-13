@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     resources :comments, :options
   end
 
+  resources :options do
+    resources :votes
+  end
+
   resource :home, only: [:show]
 
   root "home#show"

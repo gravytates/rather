@@ -1,0 +1,3 @@
+var id = `#<%= @option.id %>`
+console.log(id);
+$(id).text(`Votes: <%= vote_count(@option)%>`);

@@ -21,9 +21,7 @@ class QuestionsController < ApplicationController
     @questions = Question.recent
 
     respond_to do |format|
-      format.html {
-          redirect_to questions_path
-      }
+      format.html { redirect_to questions_path }
       format.js
     end
   end
