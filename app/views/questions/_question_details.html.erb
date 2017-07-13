@@ -7,8 +7,12 @@
       </h4>
     <% end %>
     <div class="comments" id="<%= question.id %>">
-      <p>
-
-      </p>
+      <%= link_to "Add Comment", new_question_comment_path(question), class: "btn btn-default", id: "new_comment_link", remote: true %>
+      <% question.comments.each do |comment| %>
+        <div class="well">
+          <p><%= comment.user.username %></p>
+          <p><%= comment.content %></p>
+        </div>
+      <% end %>
     </div>
 <% end %>

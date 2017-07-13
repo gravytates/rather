@@ -1,0 +1,6 @@
+<% @question.comments.each do |comment| %>
+  <div class="well">
+    <p><%= comment.user.username %></p>
+    <p><%= comment.content %></p>
+  </div>
+<% end %>
